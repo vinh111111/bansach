@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+	background-image:url("img/thuvien1.jpg");
+	background-size: auto;
+}
+ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color:#0076C0;
+}
+li{
+	float:left;
+}
+li a{
+	display:inline-block;
+	color: #f1f1f1;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+}
+li a:hover{
+	background-color:#f1f1f1;
+	color:black;
+}
+.bangsanpham{
+	margin:20px auto;
+	width:67%;
+	height:auto;
+    border-radius: 10px;
+	background-color:#C0C0C0;
+}
+.sanpham{
+	float:left;
+	border: 2px double #ffffff;
+    border-radius: 10px;
+	background-color:#ffffff;
+	height:250px;
+	width:275px;
+	margin-top:20px;
+	margin-left:20px;
+}
+.sanpham .hinhanh img{
+    width:150px;
+	height:150px;
+	margin-left:60px;
+	margin-right:30px;
+	margin-top:10px;
+}
+.sanpham a{
+	text-overflow:hidden;
+	margin:20px auto;
+	font-size:19px;
+	text-overflow:hidden;
+}
+.nhom1{
+	margin-top:5px;
+	height:50px;
+}
+.gia{
+	margin-left:20px;
+	color:#0076C0;
+	font-size:20px;
+}
+.nut{
+	font-size:15px;
+	margin-left: 10px;
+    margin-right: auto;
+	text-align: right;
+    margin-top: 5px;
+	margin-bottom:5px;
+    padding: 5px 5px;
+    border-radius: 10px;
+    background-color: 009999;
+    outline: none;
+	border:none
+}
+.nut:hover{
+	background-color: #3e8e41;
+}
+.nhom2{
+	margin-top:5px;
+	height:50px;
+}
+.themsanpham{
+	margin:20px auto;
+}
+.themsanpham button{
+	font-size:15px;
+	margin-left: 10px;
+    margin-right: auto;
+	text-align: right;
+    margin-top: 5px;
+	margin-bottom:5px;
+    padding: 5px 5px;
+    border-radius: 10px;
+    background-color: 009999;
+    outline: none;
+	border:none;
+}
+.themsanpham button:hover{
+	background-color: #3e8e41;
+}

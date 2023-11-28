@@ -1,0 +1,183 @@
+<?php session_start();?>
+<html>
+    <head>
+	    <title>Trang chủ</title>
+        <link href="giohang.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<ul>
+			<li><a href="http://localhost/baithi/trangchu.php">Trang chủ</a></li>
+			<?php
+				$cn=mysqli_connect("localhost","root","","ban_sach")or die("Kết nối thất bại!");
+				if((isset($_SESSION['TK']))and(isset($_SESSION['CV']))){
+					$tk=$_SESSION['TK'];
+					$cv=$_SESSION['CV'];
+					$sql="select*from khachhang where username='$tk'";
+					$ketqua=mysqli_query($cn,$sql)or die("Kết nối thất bại!");
+					while($row=mysqli_fetch_assoc($ketqua)){
+						$tenkh=$row['tenkh'];
+						$sdt=$row['sdt'];
+						$diachi=$row['diachi'];
+					}
+			?>
+					<li><a href="http://localhost/baithi/trangcanhan.php"><?php if(empty($tenkh)){echo $tk;}else{echo $tenkh;}?></a></li>
+			<?php
+			    }
+				else{
+			?>
+				<li><a href="http://localhost/baithi/dangnhap.php">Đăng nhập</a></li>	
+			<?php
+				}
+			?>
+			<li><a href="http://localhost/baithi/giohang.php">Giỏ hàng</a></li>
+			<?php	
+				if(isset($cv)){
+					if($cv=="admin"){		
+			?>
+						<li><a href="http://localhost/baithi/themsanpham.php">Thêm sản phẩm</a></li>
+						<li><a href="http://localhost/baithi/quanlyuser.php">Quản lý user</a></li>
+			<?php
+					}
+				}
+			?>
+		</ul>
+		<?php
+			if(isset($_GET['masach'])){
+				$ms=$_GET['masach'];
+				$sql="select*from giohang where (masach='$ms')and(dactinh='')and(username='$tk')";
+				$ketqua=mysqli_query($cn,$sql)or die("Kết nối thất bại!");
+			    $dem=mysqli_num_rows($ketqua);
+				if($dem>0){
+		?>
+					<script>
+						alert('Sản phẩm đã có trong giỏ hàng!Không thể thêm vào giỏ hàng nữa!');
+					</script>
+		<?php
+				}
+				else{
+					$sql="select*from sach where masach='$ms'";
+					$ketqua=mysqli_query($cn,$sql)or die("Kết nối thất bại!");
+					while($row=mysqli_fetch_assoc($ketqua)){
+						$ts=$row['tensach'];
+						$gb=$row['giaban'];
+						$ha=$row['hinhanh'];
+					}
+					$sl=1;
+					$sql="insert into giohang values ('$tk','$ms','$ts','$sl','$gb','$ha','','')";
+					$ketqua=mysqli_query($cn,$sql)or die("Kết nối thất bại!");
+				}
+			}
+		?>
+		<div class="khung">
+			<?php
+				if(isset($tk)){
+					$sql="select*from giohang where (dactinh='')and(username='$tk')";
+					$ketqua=mysqli_query($cn,$sql)or die("Kết nối thất bại!");
+					$tong=0;
+					while($row=mysqli_fetch_assoc($ketqua)){
+						$ms=$row['masach'];
+						$ts=$row['tensach'];
+						$sl=$row['soluong'];
+						$gb=$row['giaban'];
+						$tt=$sl*$gb;
+						$tong=$tong+$tt;
+			?>			
+						<div class="khungsanpham">
+							<div class="sanpham">
+								<div class="tensanpham">
+									<a><?php echo $ts?></a>
+								</div>
+								<div class="hinhanh">
+									<img src="<?php echo $row['hinhanh']?>"/>
+								</div>
+								<div class="soluong">
+									<button><a style="text-decoration:none" href="http://localhost/baithi/trusanpham.php?masach=<?php echo$row['masach']?>&username=<?php echo$tk?>"><font color="black">-</font></a></button>
+									<input type="text"   size="1" name="sl"  disabled value="<?php echo $sl?>"/>
+									<button><a style="text-decoration:none" href="http://localhost/baithi/congsanpham.php?masach=<?php echo$row['masach']?>&username=<?php echo$tk?>"><font color="black">+</font></a></button>
+								</div>
+								<div class="thanhtien">
+									<a><?php echo $tt?>VNĐ</a>
+								</div>
+								<div class="nut">
+									<button><a style="text-decoration:none" href="http://localhost/baithi/xoasanphamtronggiohang.php?masach=<?php echo$row['masach']?>&username=<?php echo$tk?>"><font color="#ffffff">Xóa</font></a></button>
+								</div>
+							</div>
+						</div>
+			<?php
+					}
+				}
+				if(isset($tk)){
+			?>
+					<div class="khungthanhtoan">
+						<div class="tong">
+							<p><?php echo"Tổng tiền: $tong VNĐ"?></p>
+						</div>
+						<div class="nutthanhtoan">
+							<form action="" method="post">
+								<button type="submit" name="mh">Mua hàng</button>
+							</form>
+						</div>
+					</div>
+			<?php
+				}
+			?>
+			<?php
+			$sql="select*from hoadon where username='$tk' and ngay=Date(now())";
+			$ketqua=mysqli_query($cn,$sql)or die("Kết nối thất bại!");
+			while($row=mysqli_fetch_assoc($ketqua)){
+				$thanhtien=$row['thanhtien'];
+				$ngay=$row['ngay'];
+			?>
+				<div class="khungsanpham">
+					<div class="sanpham">
+						<div class="tensanpham">
+							<p><font size=4px>Tên: <?php echo $tenkh; ?></font></p>
+						</div>
+						<div class="tensanpham">
+							<p><font size=4px>Thành tiền: <?php echo $thanhtien;?></font></p>
+						</div>
+						<div class="tensanpham">
+							<p><font size=4px>Ngày: <?php echo $ngay;?></font></p>
+						</div>
+					</div>
+				</div>
+			<?php
+				}
+			?>
+		</div>
+		<?php
+			if(isset($_POST['mh'])){
+				if((empty($sdt))or(empty($diachi))){
+		?>
+					<script>
+						alert('Vui lòng nhập đầy đử thông tin!');
+					</script>
+		<?php			
+				}
+				else{
+					if($tong>0){
+						$sql="insert into hoadon values ('$tk','$tong',CURRENT_DATE)";
+						$ketqua=mysqli_query($cn,$sql)or die("Kết nối thất bại!");
+						$sql="select*from giohang where (dactinh='')and(username='$tk')";
+						$ketqua=mysqli_query($cn,$sql)or die("Kết nối thất bại!");
+						while($row=mysqli_fetch_assoc($ketqua)){
+							$ms=$row['masach'];
+							$sl=$row['soluong'];
+							$sqly="update giohang set dactinh='đã đặt hàng',ngay=CURRENT_DATE where (dactinh='')and(username='$tk')";
+							$kq=mysqli_query($cn,$sqly)or die("Kết nối thất bại!");
+							$sqly="select*from sach where masach='$ms'";
+							$kq=mysqli_query($cn,$sqly)or die("Kết nối thất bại!");
+							while($row1=mysqli_fetch_assoc($kq)){
+								$slt=$row1['soluong'];
+								$slt=$slt-$sl;
+								$sqli="update sach set soluong='$slt' where masach='$ms'";
+								$th=mysqli_query($cn,$sqli)or die("Kết nối thất bại!");
+							}
+						}
+					}
+				header('Location:http://localhost/baithi/giohang.php');
+				}
+			}
+		?>
+	</body>
+</html>

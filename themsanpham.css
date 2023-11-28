@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+	background-image:url("img/thuvien1.jpg");
+	background-size: auto;
+}
+ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color:#0076C0;
+}
+li{
+	float:left;
+}
+li a{
+	display:inline-block;
+	color: #f1f1f1;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+}
+li a:hover{
+	background-color:#f1f1f1;
+	color:black;
+}
+.khung{
+	max-width: 400px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 15px 15px;
+    border: 2px double #ffffff;
+    border-radius: 10px;
+}
+h1{
+    color: 009999;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+label{
+	font-size: 25px;
+    margin-bottom: 30px;
+}
+.khungnhap input[type="text"],
+.khungnhap input[type="number"]{
+	width: 100%;  
+	padding: 12px 20px;  
+	margin: 8px 0px; 
+	box-sizing: border-box;
+	border: 1px solid #cccccc;
+	font-size: 16px;
+    display: inline-block;
+    height: 45px;
+    color: #666666;
+}
+.khungnhap input[type="file"]{
+	margin: 8px 0;
+}
+.nut button{
+	font-size:25px;
+	margin-left: auto;
+    margin-right: auto;
+	text-align: right;
+    margin-top: 20px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    background-color: 009999;
+    color: #ffffff;
+    outline: none;
+	border:none
+}
+.nut button:hover{
+	background-color: #3e8e41;
+}

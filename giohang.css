@@ -1,0 +1,151 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+	background-image:url("img/thuvien1.jpg");
+	background-size:1400px 660px;
+}
+ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color:#0076C0;
+}
+li{
+	float:left;
+}
+li a{
+	display:inline-block;
+	color: #f1f1f1;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+}
+li a:hover{
+	background-color:#f1f1f1;
+	color:black;
+}
+.khung{
+	margin:20px auto;
+	width:67%;
+	height:auto;
+	border: 2px double #C0C0C0;
+    border-radius: 10px;
+	background-color:#C0C0C0;
+}
+.khungsanpham{
+	width:95%;
+	height:50px;
+	margin:20px auto;
+	border: 2px double #ffffff;
+	background-color:#ffffff;
+	border-radius: 20px;
+}
+.sanpham{
+	margin-left:10px;
+	margin-top:15px;
+}
+.tensanpham{
+	width:250px;
+	height:20px;
+	float:left;
+	overflow:hidden;
+}
+.tensanpham a{
+	font-size:20px;
+}
+.tensanpham p{
+	font-size:20px;
+}
+.hinhanh{
+	float:left;
+}
+.hinhanh img{
+	margin-top:-12px;
+	width:100px;
+	height:45px;
+}
+.soluong{
+	margin-left:400px ;
+}
+.soluong input{
+	text-align:center;
+}
+.soluong button{
+	border-radius:100px;
+	border:none;
+	padding:2px 6.4px;
+	background-color: 009999
+}
+.soluong button:hover{
+	background-color: #3e8e41;
+}
+.thanhtien{
+	margin-left:550px;
+	margin-top:-23px;
+	width:100px;
+}
+.thanhtien a{
+	font-size:25px;
+	color:red;
+}
+.nut{
+	float:right;
+	margin-top: -28px;
+	margin-right:10px;
+}
+.nut button{
+	font-size:15px;
+	margin-left: 10px;
+    margin-right: auto;
+	text-align: right;
+    padding: 5px 5px;
+    border-radius: 10px;
+    background-color: 009999;
+    outline: none;
+	border:none;
+	color:#ffffff;
+}
+.nut button:hover{
+	background-color: #3e8e41;
+}
+
+.khungthanhtoan{
+	width:95%;
+	height:60px;
+	margin:20px auto;
+	border: 2px double #ffffff;
+	background-color:#ffffff;
+	border-radius: 20px;
+}
+.nutthanhtoan{
+	float:right;
+	margin-top: 3px;
+	margin-right:25px;
+}
+.nutthanhtoan button{
+	font-size:20px;
+	margin-left: 10px;
+    margin-right: auto;
+	text-align: right;
+    padding: 16px 12px;
+    border-radius: 10px;
+    background-color: 009999;
+    outline: none;
+	border:none;
+	color:#ffffff;
+}
+.nutthanhtoan button:hover{
+	background-color: #3e8e41;
+}
+.tong{
+	float:left;
+	margin-top: 15px;
+	margin-left:25px;
+}
+.tong p{
+	font-size:25px;
+	color:red
+}

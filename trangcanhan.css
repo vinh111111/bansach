@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+	background-image:url("img/thuvien1.jpg");
+	background-size:1400px 660px;
+}
+ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color:#0076C0;
+}
+li{
+	float:left;
+}
+li a{
+	display:inline-block;
+	color: #f1f1f1;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+}
+li a:hover{
+	background-color:#f1f1f1;
+	color:black;
+}
+.khung{
+	max-width: 600px;
+    margin: 10px auto;
+    background-color: #ffffff;
+    padding: 15px 15px;
+    border: 2px double #ffffff;
+    border-radius: 10px;
+}
+.hinhanh{
+	width:100px;
+	height:150px;
+	margin-top:10px;
+	margin-left:225px;
+	margin-right:225px;
+	margin-bottom:30px;
+}
+.hinhanh img{
+	width:150px;
+	height:150px;
+	border:5px solid #C0C0C0;
+	border-radius:100px;
+	padding:2px 2px;
+}
+.khungnhap{
+	width:70%;
+	height:auto;
+	margin: 10px auto;
+}
+label{
+	font-size: 25px;
+    margin-bottom: 30px;
+	margin-top: 30px;
+}
+input[type="text"]{
+	width: 100%;  
+	padding: 12px 20px;  
+	margin: 8px 0; 
+	box-sizing: border-box;
+	border: 1px solid #cccccc;
+	font-size: 16px;
+    display: inline-block;
+    height: 45px;
+    color: #666666;
+}
+.nut1 button{
+	margin: 10px auto;
+	font-size:30px;
+	margin-left: 225px;
+	text-align: right;
+    margin-top: 20px;
+	margin-bottom: 20px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    background-color: 009999;
+    color: #ffffff;
+    outline: none;
+	border:none
+}
+button:hover{
+	background-color: #3e8e41;
+}
+.nut2 button{
+	margin: 10px auto;
+	font-size:30px;
+	margin-left: 219px;
+	text-align: right;
+    margin-top: 20px;
+	margin-bottom: 20px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    background-color: 009999;
+    color: #ffffff;
+    outline: none;
+	border:none
+}

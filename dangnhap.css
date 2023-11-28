@@ -1,0 +1,50 @@
+body{
+	background-image:url("img/thuvien1.jpg");
+	background-size:1400px 660px;
+}
+.khung{
+	max-width: 400px;
+    margin: 100px auto;
+    background-color: #ffffff;
+    padding: 15px 15px;
+    border: 2px double #ffffff;
+    border-radius: 10px;
+}
+h1{
+    color: 009999;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+label{
+	font-size: 25px;
+    margin-bottom: 30px;
+}
+.khungnhap input[type="text"],
+.khungnhap input[type="password"]{
+	width: 100%;  
+	padding: 12px 20px;  
+	margin: 8px 0; 
+	box-sizing: border-box;
+	border: 1px solid #cccccc;
+	font-size: 16px;
+    display: inline-block;
+    height: 45px;
+    color: #666666;
+}
+.nut button{
+	font-size:25px;
+	margin-left: auto;
+    margin-right: auto;
+	text-align: right;
+    margin-top: 20px;
+	margin-bottom:20px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    background-color: 009999;
+    color: #ffffff;
+    outline: none;
+	border:none
+}
+.nut button:hover{
+	background-color: #3e8e41;
+}
